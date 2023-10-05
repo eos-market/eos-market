@@ -2,15 +2,15 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///nft_display.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eosmarket.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    wallet_balance = db.Column(db.Float, default=10000.0)
-    nfts = db.relationship('NFT', backref='owner', lazy=True)
+    wallet_balance = db.Column(db.Float, default=20000.0)
+    nfts = db.relationship('NFT', backref='owner', lazy=False)
 
 class NFT(db.Model):
     id = db.Column(db.Integer, primary_key=True)
