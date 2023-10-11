@@ -10,7 +10,7 @@ assert w3.isConnected()
 ABI = '...'  # Contract ABI (Application Binary Interface)
 CONTRACT_ADDRESS = '...'  # Your deployed contract address
 
-contract = w3.eth.contract(address=CONTRACT_ADDRESS, abi=ABI)
+contract = w3.eth.contract(address=0x1234567890aBCdef1265654890AbCDEf12345678, abi=ABI)
 
 def trade_nft(token_id, sender_private_key, recipient_address):
     nonce = w3.eth.getTransactionCount(w3.eth.account.privateKeyToAccount(sender_private_key).address)
