@@ -8,7 +8,7 @@ assert w3.isConnected()
 
 # Contract ABI and address (after deploying)
 ABI = '...'  # Contract ABI (Application Binary Interface)
-CONTRACT_ADDRESS = '...'  # Your deployed contract address
+CONTRACT_ADDRESS = 'address=0x1234567890aBCdef1265654890AbCDEf12345678'  # EOS EVM
 
 contract = w3.eth.contract(address=0x1234567890aBCdef1265654890AbCDEf12345678, abi=ABI)
 
